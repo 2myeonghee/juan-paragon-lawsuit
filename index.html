@@ -1,1215 +1,1167 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>주안 센트럴 파라곤 집단소송 접수 | 법무법인 더 에이치 황해</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주안 센트럴 파라곤 입주지연·하자 집단소송 | 법무법인 더 에이치 황해 집단소송센터</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --primary: #2C3E50;
-    --accent: #1A73E8;
-    --cta-inactive: #93B4D1;
-    --bg: #F8F9FA;
-    --card-bg: #FFFFFF;
-    --card-radius: 16px;
-    --card-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    --required: #DC2626;
-    --text-main: #1A202C;
-    --text-sub: #64748B;
-    --border: #E2E8F0;
-  }
-
-  html { font-family: 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text-main); }
-
-  body { margin: 0; min-height: 100vh; background: var(--bg); }
-
-  /* ─── STICKY HEADER ─── */
-  .site-header {
-    position: sticky; top: 0; z-index: 100;
-    background: var(--primary);
-    height: 56px; display: flex; align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  .site-header .brand { font-size: 14px; font-weight: 700; color: #fff; }
-  .site-header .phone { font-size: 13px; color: #fff; text-decoration: none; }
-
-  /* ─── HERO ─── */
-  .hero {
-    position: relative;
-    background-image:
-      linear-gradient(rgba(44,62,80,0.7), rgba(44,62,80,0.85)),
-      url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80');
-    background-size: cover;
-    background-position: center;
-    padding: 48px 24px 44px;
-    text-align: center;
-  }
-  .hero-tag {
-    display: inline-block;
-    background: rgba(255,255,255,0.18);
-    color: #fff;
-    font-size: 11px; font-weight: 600;
-    padding: 5px 12px; border-radius: 99px;
-    margin-bottom: 16px;
-    letter-spacing: 0.02em;
-    border: 1px solid rgba(255,255,255,0.3);
-  }
-  .hero-title {
-    font-size: 28px; font-weight: 800;
-    color: #fff; line-height: 1.3;
-    margin-bottom: 12px;
-    white-space: pre-line;
-  }
-  .hero-sub {
-    font-size: 13px; color: #CBD5E1;
-    line-height: 1.6; margin-bottom: 28px;
-  }
-  .btn-cta {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: var(--accent);
-    color: #fff;
-    font-size: 16px; font-weight: 700;
-    padding: 14px 36px; border-radius: 99px;
-    border: none; cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    text-decoration: none;
-  }
-  .btn-cta:active { transform: scale(0.97); }
-  .btn-cta.inactive { background: var(--cta-inactive); pointer-events: none; }
-
-  /* ─── SECTION COMMON ─── */
-  .section { padding: 28px 20px; }
-  .section-title {
-    font-size: 17px; font-weight: 700;
-    color: var(--primary); margin-bottom: 16px;
-  }
-
-  /* ─── STATUS CARDS ─── */
-  .status-cards { display: flex; flex-direction: column; gap: 12px; padding: 20px; }
-  .status-card {
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-    padding: 16px 18px;
-    display: flex; align-items: center; gap: 14px;
-  }
-  .status-icon {
-    width: 44px; height: 44px; border-radius: 12px;
-    background: #EBF3FF;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-  .status-icon svg { width: 22px; height: 22px; }
-  .status-text .label { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
-  .status-text .desc { font-size: 12px; color: var(--text-sub); }
-
-  /* ─── DAMAGE SECTION ─── */
-  .damage-section {
-    background: var(--primary);
-    padding: 32px 20px;
-    text-align: center;
-  }
-  .damage-label { font-size: 13px; color: #94A3B8; margin-bottom: 8px; }
-  .damage-amount { font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 24px; }
-  .damage-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    color: #fff;
-  }
-  .damage-table th { font-size: 12px; color: #94A3B8; font-weight: 500; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .damage-table td { font-size: 13px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .damage-table td:last-child { text-align: right; color: #93C5FD; font-weight: 600; }
-
-  /* ─── CALCULATOR ─── */
-  .calc-section {
-    background: var(--card-bg);
-    padding: 24px 20px;
-    margin: 0 20px 20px;
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-  }
-  .calc-section .section-title { margin-bottom: 20px; }
-  .calc-row { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
-  .calc-row label { font-size: 12px; font-weight: 600; color: var(--text-sub); }
-  .calc-row input, .calc-row select {
-    height: 44px;
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 0 14px;
-    font-size: 14px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--text-main);
-    background: #fff;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-  .calc-row input:focus, .calc-row select:focus { border-color: var(--accent); }
-  .calc-result {
-    margin-top: 20px;
-    background: #EBF3FF;
-    border-radius: 12px;
-    padding: 16px;
-    text-align: center;
-  }
-  .calc-result .result-label { font-size: 12px; color: var(--text-sub); margin-bottom: 4px; }
-  .calc-result .result-amount { font-size: 28px; font-weight: 800; color: var(--accent); }
-  .calc-notice { font-size: 11px; color: var(--text-sub); margin-top: 10px; text-align: center; }
-
-  /* ─── WIN CASES ─── */
-  .win-cards { display: flex; flex-direction: column; gap: 10px; }
-  .win-card {
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-    padding: 16px 18px;
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .win-card .case-name { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 3px; }
-  .win-card .case-info { font-size: 12px; color: var(--text-sub); }
-  .win-card .case-amount { font-size: 18px; font-weight: 800; color: var(--accent); }
-  .win-card .case-status { font-size: 12px; font-weight: 600; color: var(--accent); background: #EBF3FF; padding: 3px 8px; border-radius: 99px; }
-
-  /* ─── TIMELINE ─── */
-  .timeline { position: relative; padding: 0 20px; }
-  .timeline-item { display: flex; gap: 14px; padding-bottom: 24px; position: relative; }
-  .timeline-item:last-child { padding-bottom: 0; }
-  .timeline-left { display: flex; flex-direction: column; align-items: center; }
-  .timeline-dot {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--accent);
-    color: #fff; font-size: 13px; font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    position: relative; z-index: 1;
-  }
-  .timeline-line {
-    width: 2px; flex: 1;
-    background: #DBEAFE;
-    margin-top: 4px;
-  }
-  .timeline-item:last-child .timeline-line { display: none; }
-  .timeline-content { padding-top: 5px; }
-  .timeline-content .t-title { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 3px; }
-  .timeline-content .t-desc { font-size: 12px; color: var(--text-sub); }
-
-  /* ─── FIRM INTRO ─── */
-  .firm-intro { padding: 28px 20px; }
-  .firm-card {
-    background: var(--card-bg);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-    padding: 24px 20px;
-  }
-  .firm-stat { display: flex; gap: 0; margin-bottom: 20px; }
-  .firm-stat-item { flex: 1; text-align: center; }
-  .firm-stat-item + .firm-stat-item { border-left: 1px solid var(--border); }
-  .firm-stat-item .stat-num { font-size: 22px; font-weight: 800; color: var(--accent); }
-  .firm-stat-item .stat-label { font-size: 11px; color: var(--text-sub); margin-top: 2px; }
-  .firm-cases { display: flex; flex-wrap: wrap; gap: 6px; }
-  .firm-case-tag {
-    background: #EBF3FF; color: var(--accent);
-    font-size: 11px; font-weight: 600;
-    padding: 5px 10px; border-radius: 99px;
-  }
-
-  /* ─── FOOTER ─── */
-  .site-footer {
-    background: #1A2535;
-    padding: 28px 20px;
-    color: #94A3B8;
-    font-size: 11px;
-    line-height: 1.8;
-  }
-  .site-footer .footer-brand { font-weight: 700; color: #CBD5E1; font-size: 13px; margin-bottom: 8px; }
-
-  /* ─── PART B: FORM ─── */
-  #part-b { display: none; flex-direction: column; min-height: 100vh; }
-  #part-b.active { display: flex; }
-
-  /* Progress Bar */
-  .progress-header {
-    position: sticky; top: 0; z-index: 100;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  }
-  .progress-top {
-    display: flex; align-items: center;
-    padding: 0 20px; height: 56px;
-    gap: 12px;
-  }
-  .back-btn {
-    background: none; border: none; cursor: pointer;
-    display: flex; align-items: center; gap: 4px;
-    font-size: 13px; font-weight: 600; color: var(--text-sub);
-    padding: 4px 0;
-  }
-  .back-btn svg { width: 16px; height: 16px; }
-  .progress-label {
-    flex: 1; text-align: center;
-    font-size: 13px; font-weight: 700; color: var(--primary);
-  }
-  .progress-placeholder { width: 48px; }
-  .progress-bar-wrap { height: 4px; background: #E2E8F0; }
-  .progress-bar-fill { height: 100%; background: var(--accent); transition: width 0.35s ease; border-radius: 99px; }
-
-  /* Steps container */
-  .steps-wrap { flex: 1; overflow: hidden; position: relative; }
-  .step {
-    position: absolute; top: 0; left: 0; width: 100%;
-    padding: 28px 20px 120px;
-    opacity: 0; pointer-events: none;
-    transform: translateX(20px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-  }
-  .step.active {
-    opacity: 1; pointer-events: all;
-    transform: translateX(0);
-    position: relative;
-  }
-  .step-title { font-size: 20px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
-  .step-desc { font-size: 13px; color: var(--text-sub); margin-bottom: 24px; }
-
-  /* Radio Cards */
-  .radio-cards { display: flex; flex-direction: column; gap: 10px; }
-  .radio-card {
-    border: 2px solid var(--border);
-    border-radius: var(--card-radius);
-    padding: 16px 18px;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .radio-card.selected { border-color: var(--accent); background: #EBF3FF; }
-  .radio-circle {
-    width: 20px; height: 20px; border-radius: 50%;
-    border: 2px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: border-color 0.2s;
-  }
-  .radio-card.selected .radio-circle { border-color: var(--accent); }
-  .radio-dot {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent); display: none;
-  }
-  .radio-card.selected .radio-dot { display: block; }
-  .radio-text .r-title { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
-  .radio-text .r-desc { font-size: 12px; color: var(--text-sub); }
-
-  /* Form fields */
-  .field-group { display: flex; flex-direction: column; gap: 14px; margin-bottom: 8px; }
-  .field { display: flex; flex-direction: column; gap: 6px; }
-  .field label { font-size: 13px; font-weight: 600; color: var(--text-main); }
-  .field label .req { color: var(--required); margin-left: 2px; }
-  .field input[type="text"],
-  .field input[type="tel"],
-  .field input[type="number"],
-  .field select,
-  .field textarea {
-    height: 48px;
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    padding: 0 16px;
-    font-size: 15px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--text-main);
-    background: #fff;
-    outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
-  }
-  .field textarea { height: 96px; padding: 12px 16px; resize: none; }
-  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); }
-
-  /* Info banner */
-  .info-banner {
-    background: #EBF3FF;
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size: 12px;
-    color: #1E40AF;
-    font-weight: 500;
-    margin-bottom: 20px;
-    display: flex; align-items: flex-start; gap: 8px;
-  }
-  .info-banner svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
-
-  /* Checkbox Grid */
-  .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
-  .check-card {
-    border: 2px solid var(--border);
-    border-radius: 12px;
-    padding: 12px;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    display: flex; align-items: center; gap: 8px;
-    font-size: 13px; font-weight: 600; color: var(--text-main);
-  }
-  .check-card.checked { border-color: var(--accent); background: #EBF3FF; color: var(--accent); }
-  .check-box {
-    width: 18px; height: 18px; border-radius: 5px;
-    border: 2px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: all 0.2s;
-  }
-  .check-card.checked .check-box { background: var(--accent); border-color: var(--accent); }
-  .check-box svg { display: none; }
-  .check-card.checked .check-box svg { display: block; }
-
-  /* File Upload */
-  .file-zone {
-    border: 2px dashed var(--border);
-    border-radius: 12px;
-    padding: 24px 16px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    margin-bottom: 14px;
-  }
-  .file-zone:hover, .file-zone.dragover { border-color: var(--accent); background: #EBF3FF; }
-  .file-zone input[type="file"] { display: none; }
-  .file-zone .upload-icon { margin: 0 auto 10px; width: 36px; height: 36px; }
-  .file-zone .upload-label { font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 4px; }
-  .file-zone .upload-hint { font-size: 11px; color: var(--text-sub); }
-  .file-zone .file-name { font-size: 12px; color: var(--accent); font-weight: 600; margin-top: 8px; }
-  .upload-sub { font-size: 12px; font-weight: 600; color: var(--text-main); margin-bottom: 6px; }
-  .upload-opt { font-size: 11px; color: var(--text-sub); margin-bottom: 8px; }
-
-  /* Accordion */
-  .accordion { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-  .accord-item { border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
-  .accord-head {
-    padding: 14px 16px;
-    display: flex; justify-content: space-between; align-items: center;
-    cursor: pointer; background: #fff;
-  }
-  .accord-head-title { font-size: 13px; font-weight: 600; color: var(--text-main); }
-  .accord-arrow { width: 18px; height: 18px; transition: transform 0.2s; color: var(--text-sub); }
-  .accord-item.open .accord-arrow { transform: rotate(180deg); }
-  .accord-body { display: none; padding: 0 16px 14px; font-size: 12px; color: var(--text-sub); line-height: 1.7; border-top: 1px solid var(--border); padding-top: 12px; }
-  .accord-item.open .accord-body { display: block; }
-
-  /* Agree items */
-  .agree-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
-  .agree-item {
-    display: flex; align-items: center; gap: 10px;
-    padding: 14px;
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: border-color 0.2s;
-  }
-  .agree-item.checked { border-color: var(--accent); background: #F0F7FF; }
-  .agree-check {
-    width: 22px; height: 22px; border-radius: 6px;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s;
-  }
-  .agree-item.checked .agree-check { background: var(--accent); border-color: var(--accent); }
-  .agree-check svg { display: none; }
-  .agree-item.checked .agree-check svg { display: block; }
-  .agree-text { font-size: 13px; font-weight: 600; color: var(--text-main); }
-
-  /* Bottom CTA */
-  .step-footer {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    max-width: 720px; margin: 0 auto;
-    background: #fff;
-    padding: 12px 20px 28px;
-    box-shadow: 0 -4px 16px rgba(0,0,0,0.07);
-    z-index: 90;
-  }
-  .btn-next {
-    width: 100%; height: 52px;
-    background: var(--accent);
-    color: #fff; font-size: 16px; font-weight: 700;
-    border: none; border-radius: 14px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-  .btn-next:active { transform: scale(0.98); }
-  .btn-next:disabled { background: var(--cta-inactive); cursor: not-allowed; }
-
-  /* Step 7: Complete */
-  .complete-wrap {
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    min-height: 70vh; text-align: center;
-    padding: 40px 24px;
-  }
-  .complete-icon {
-    width: 80px; height: 80px; border-radius: 50%;
-    background: #DCFCE7;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 24px;
-    animation: bounce-in 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  }
-  @keyframes bounce-in {
-    0% { transform: scale(0); opacity: 0; }
-    60% { transform: scale(1.15); opacity: 1; }
-    80% { transform: scale(0.95); }
-    100% { transform: scale(1); }
-  }
-  .complete-icon svg { width: 40px; height: 40px; color: #16A34A; }
-  .complete-title { font-size: 20px; font-weight: 800; color: var(--primary); line-height: 1.4; margin-bottom: 12px; white-space: pre-line; }
-  .receipt-number { background: #EBF3FF; border-radius: 10px; padding: 10px 20px; font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 16px; }
-  .complete-desc { font-size: 13px; color: var(--text-sub); line-height: 1.6; margin-bottom: 32px; }
-
-    .container { max-width: 720px; margin: 0 auto; }
-    
-    @media (min-width: 768px) {
-      .container { max-width: 720px; }
-      .hero { padding: 60px 40px 72px; }
-      .hero h1 { font-size: 36px; }
-      .hero-sub { font-size: 15px; }
-      .status-cards { flex-direction: row; gap: 16px; }
-      .status-card { flex: 1; flex-direction: column; text-align: center; }
-      .case-cards { flex-direction: row; gap: 16px; }
-      .case-card { flex: 1; }
-      .checkbox-group { grid-template-columns: 1fr 1fr 1fr; }
-      section { padding: 48px 24px; }
-      .form-card { padding: 36px 32px; }
-      .calc-inputs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-    }
-    
-    @media (min-width: 1024px) {
-      .container { max-width: 960px; }
-      .hero h1 { font-size: 42px; }
-      .status-cards { gap: 20px; }
+    :root {
+      --primary: #2C3E50;
+      --primary-dark: #1a252f;
+      --accent: #2563EB;
+      --text: #1F2937;
+      --text-sub: #6B7280;
+      --bg: #FFFFFF;
+      --bg-light: #F8F9FA;
+      --border: #E5E7EB;
+      --header-h: 60px;
     }
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-nav a {
+      font-size: 13px;
+      color: var(--text-sub);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color .15s;
+    }
+
+    .header-nav a:hover { color: var(--primary); }
+
+    .header-nav .sep {
+      color: var(--border);
+      font-size: 12px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80') center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(28,39,50,.82) 0%, rgba(28,39,50,.65) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      padding: 0 24px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+      color: #E0E7FF;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.45;
+      text-shadow: 0 1px 6px rgba(0,0,0,.4);
+    }
+
+    /* ── LAYOUT ── */
+    .page-body {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .main-col {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    .sidebar {
+      flex: 0 0 340px;
+      width: 340px;
+      position: sticky;
+      top: calc(var(--header-h) + 20px);
+    }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 52px; }
+
+    /* Section 1 - Intro */
+    .section-intro-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.45;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .section-intro-sub {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background .15s;
+      letter-spacing: .01em;
+    }
+
+    .btn-cta:hover { background: var(--primary-dark); }
+
+    /* Section 2 - Info box */
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #EFF6FF;
+      border-left: 4px solid #3B82F6;
+      border-radius: 0 6px 6px 0;
+      padding: 16px 18px;
+      font-size: 14px;
+      color: #1E40AF;
+      line-height: 1.65;
+    }
+
+    .info-box svg { flex-shrink: 0; margin-top: 2px; }
+
+    /* Section headings */
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* Section 3 - Stats */
+    .stat-highlight {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .stat-card-label {
+      font-size: 12px;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      letter-spacing: .03em;
+    }
+
+    .stat-card-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.45;
+    }
+
+    /* Section 4 - Checklist */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .checklist li svg { flex-shrink: 0; margin-top: 3px; }
+
+    .checklist-note {
+      background: var(--bg-light);
+      border-radius: 8px;
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.6;
+      border: 1px solid var(--border);
+    }
+
+    /* Section 5 - Calculator */
+    .calc-box {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+    }
+
+    .calc-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .calc-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s;
+    }
+
+    .calc-field input:focus,
+    .calc-field select:focus { border-color: var(--accent); }
+
+    .calc-result {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 8px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .calc-result-label { font-size: 14px; opacity: .85; }
+
+    .calc-result-value {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -.01em;
+    }
+
+    .calc-breakdown {
+      margin-top: 12px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .calc-breakdown-item {
+      font-size: 13px;
+      opacity: .8;
+    }
+
+    /* Section 6 - Cases */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .case-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 20px;
+      background: #fff;
+    }
+
+    .case-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      letter-spacing: .04em;
+    }
+
+    .case-badge.won { background: #D1FAE5; color: #065F46; }
+    .case-badge.ongoing { background: #DBEAFE; color: #1D4ED8; }
+
+    .case-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .case-amount {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .case-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* Section 7 - Firm intro */
+    .firm-intro {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 10px;
+      padding: 36px 32px;
+      text-align: center;
+    }
+
+    .firm-intro-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .firm-intro-sub {
+      font-size: 14px;
+      opacity: .8;
+      line-height: 1.75;
+    }
+
+    .firm-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .firm-stat { text-align: center; }
+
+    .firm-stat-num {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 28px;
+      font-weight: 900;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .firm-stat-label {
+      font-size: 12px;
+      opacity: .75;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-form-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .sidebar-form-sub {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+    }
+
+    .form-field {
+      margin-bottom: 12px;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+    .form-field label .req {
+      color: #3B82F6;
+      margin-left: 2px;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 14px;
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color .15s;
+      -webkit-appearance: none;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus { border-color: var(--accent); }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.55;
+      margin-bottom: 16px;
+      margin-top: 4px;
+    }
+
+    .privacy-check input[type="checkbox"] {
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--primary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Noto Sans KR', sans-serif;
+      cursor: pointer;
+      transition: background .15s;
+      letter-spacing: .02em;
+    }
+
+    .btn-submit:hover { background: var(--primary-dark); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px 16px;
+    }
+
+    .form-success-icon {
+      margin-bottom: 12px;
+    }
+
+    .form-success-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .form-success-sub {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    .receipt-num {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    /* Firm info card */
+    .firm-info-card .firm-info-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .firm-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .firm-info-row svg { flex-shrink: 0; margin-top: 2px; }
+
+    .firm-info-row strong { color: var(--text); }
+
+    /* Mobile form section */
+    .mobile-form-section {
+      display: none;
+    }
+
+    /* ── MOBILE CTA BAR ── */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--primary);
+      padding: 12px 20px;
+      z-index: 90;
+    }
+
+    .mobile-cta-bar a {
+      display: block;
+      text-align: center;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1E293B;
+      color: rgba(255,255,255,.6);
+      padding: 36px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .footer-info {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .footer-copy {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .case-grid { grid-template-columns: 1fr 1fr; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .calc-fields { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { height: 200px; }
+      .hero-title { font-size: 20px; }
+
+      .header-nav { display: none; }
+      .hamburger { display: flex; }
+
+      .page-body { padding: 28px 16px 120px; flex-direction: column; gap: 0; }
+      .sidebar { display: none; }
+      .mobile-form-section { display: block; margin-bottom: 48px; }
+      .mobile-cta-bar { display: block; }
+
+      .section-intro-title { font-size: 22px; }
+      .stat-highlight { font-size: 28px; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .calc-fields { grid-template-columns: 1fr; }
+      .case-grid { grid-template-columns: 1fr; }
+      .firm-intro { padding: 28px 20px; }
+      .firm-stats { gap: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .stat-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ PART A ═══════════════════════════════ -->
-<div id="part-a">
-
-  <!-- Header -->
-  <header class="site-header">
-    <span class="brand">법무법인 더 에이치 황해</span>
-    <a href="tel:032-251-1000" class="phone">032-251-1000</a>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-tag">주안 센트럴 파라곤 입주예정자</div>
-    <h1 class="hero-title">입주지연·하자&#10;집단소송 접수</h1>
-    <p class="hero-sub">세대당 100건+ 하자 | 4개월 입주 지연 | 가구당 9,000만원+ 손해 예상</p>
-    <button class="btn-cta" id="hero-cta-btn">소송 접수하기</button>
-  </section>
-
-  <!-- Status Cards -->
-  <div class="status-cards">
-    <div class="status-card">
-      <div class="status-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-      </div>
-      <div class="status-text">
-        <div class="label">4개월+ 입주 지연</div>
-        <div class="desc">2025.12 → 2026.3.31</div>
-      </div>
-    </div>
-    <div class="status-card">
-      <div class="status-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-          <line x1="12" y1="9" x2="12" y2="13"/>
-          <line x1="12" y1="17" x2="12.01" y2="17"/>
-        </svg>
-      </div>
-      <div class="status-text">
-        <div class="label">세대당 100건+ 하자</div>
-        <div class="desc">바닥·창호·누수·곰팡이</div>
-      </div>
-    </div>
-    <div class="status-card">
-      <div class="status-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="1" y="3" width="15" height="13" rx="2"/>
-          <path d="M16 8h4l3 3v5h-7V8z"/>
-          <circle cx="5.5" cy="18.5" r="2.5"/>
-          <circle cx="18.5" cy="18.5" r="2.5"/>
-        </svg>
-      </div>
-      <div class="status-text">
-        <div class="label">주차장 규격 미달</div>
-        <div class="desc">사전점검 출입 통제</div>
-      </div>
-    </div>
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a class="header-logo" href="#">법무법인 더 에이치 황해 | 집단소송센터</a>
+    <nav class="header-nav">
+      <a href="#">법무법인 더 에이치 황해 홈페이지</a>
+      <span class="sep">|</span>
+      <a href="#">솔루션센터</a>
+      <span class="sep">|</span>
+      <a href="#">지주 문의 접수</a>
+    </nav>
+    <button class="hamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</header>
 
-  <!-- Damage Section -->
-  <section class="damage-section">
-    <div class="damage-label">가구당 손해배상 예상액</div>
-    <div class="damage-amount">9,000만원+</div>
-    <table class="damage-table">
-      <thead>
-        <tr>
-          <th>항목</th>
-          <th style="text-align:right">예상금액</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>지체상금 (4개월)</td>
-          <td>약 3,000~6,000만원</td>
-        </tr>
-        <tr>
-          <td>연체이자</td>
-          <td>약 600~1,200만원</td>
-        </tr>
-        <tr>
-          <td>추가부담금 반환</td>
-          <td>약 500~1,000만원</td>
-        </tr>
-        <tr>
-          <td>생활피해 위자료</td>
-          <td>약 300~500만원</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Calculator -->
-  <div class="section" style="padding:20px 0 0;">
-    <div class="calc-section">
-      <div class="section-title">나의 예상 배상금 계산기</div>
-      <div class="calc-row">
-        <label>분양가 (만원)</label>
-        <input type="number" id="calc-price" placeholder="예: 50000" min="0">
-      </div>
-      <div class="calc-row">
-        <label>지연일수 (일)</label>
-        <input type="number" id="calc-days" value="120" min="1">
-      </div>
-      <div class="calc-row">
-        <label>지체상금 요율</label>
-        <select id="calc-rate">
-          <option value="0.001">1/1000</option>
-          <option value="0.002" selected>2/1000</option>
-          <option value="0.003">3/1000</option>
-        </select>
-      </div>
-      <div class="calc-result">
-        <div class="result-label">예상 총 배상금</div>
-        <div class="result-amount" id="calc-result-amount">약 0원</div>
-      </div>
-      <p class="calc-notice">실제 배상금은 계약 조건에 따라 달라질 수 있습니다</p>
-    </div>
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">[모집중] 주안 센트럴 파라곤 입주지연·하자 집단소송</div>
+    <h1 class="hero-title">세대당 100건 이상의 하자,<br>법무법인 더 에이치 황해가 함께합니다.</h1>
   </div>
+</section>
 
-  <!-- Win Cases -->
-  <section class="section">
-    <div class="section-title">집단소송 승소 사례</div>
-    <div class="win-cards">
-      <div class="win-card">
-        <div>
+<!-- ── PAGE BODY ── -->
+<div class="page-body">
+
+  <!-- ── MAIN COLUMN ── -->
+  <main class="main-col">
+
+    <!-- Section 1: Intro -->
+    <section class="section">
+      <h2 class="section-intro-title">세대당 100건 이상의 하자,<br>입주지연 손해배상을 청구하세요.</h2>
+      <p class="section-intro-sub">4개월 이상 입주 지연과 대규모 하자로 인한 피해, 법무법인 더 에이치 황해가 입주예정자 여러분의 권리를 지켜드립니다.</p>
+      <a class="btn-cta" href="#apply-form">소송 참여 신청하기 &gt;</a>
+    </section>
+
+    <!-- Section 2: Info box -->
+    <section class="section">
+      <div class="info-box">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="9" stroke="#3B82F6" stroke-width="1.8"/>
+          <path d="M10 9v5" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="10" cy="6.5" r="1" fill="#3B82F6"/>
+        </svg>
+        <span>변호사가 직접 안내에 따라 <strong>무료 상담</strong>을 진행합니다. 추가 비용 없이 소송 참여 가능 여부를 확인해 드립니다.</span>
+      </div>
+    </section>
+
+    <!-- Section 3: Stats -->
+    <section class="section">
+      <h2 class="section-title">세대당 100건+ 하자 발견, 4개월 입주 지연</h2>
+
+      <div class="stat-highlight">9,000만원+</div>
+      <div class="stat-label">가구당 예상 손해 배상금 (지체상금 + 하자보수비 + 이행이익 포함)</div>
+
+      <p style="font-size:15px; color:var(--text-sub); line-height:1.75; margin-bottom:20px;">
+        주안 센트럴 파라곤은 당초 2025년 12월 입주 예정이었으나, 시공 문제로 인해 2026년 3월 31일로 입주가 4개월 이상 지연되었습니다. 사전점검 과정에서 세대당 100건을 초과하는 하자가 발견되었으며, 외부 전문 점검업체의 출입이 제한되는 등 입주예정자의 권리가 침해되고 있습니다.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-card-label">입주 지연 현황</div>
+          <div class="stat-card-value">당초 2025.12<br>→ 2026.3.31<br>(약 4개월 지연)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">지체상금 산정 기준</div>
+          <div class="stat-card-value">공사금액 × 1~3/1000<br>× 지연일수</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">주차장 규격 문제</div>
+          <div class="stat-card-value">법정 기준 미달 의혹<br>감정 조사 진행 예정</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">사전점검 방해</div>
+          <div class="stat-card-value">외부 점검업체<br>출입 제한 확인</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Checklist -->
+    <section class="section">
+      <h2 class="section-title">입주지연·하자 피해 체크리스트</h2>
+      <ul class="checklist">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#DBEAFE"/>
+            <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>당초 입주 예정일보다 <strong>3개월 이상 지연</strong>되었는지</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#DBEAFE"/>
+            <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>세대 내 <strong>바닥 수평, 창호, 누수</strong> 등 하자가 발견되었는지</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#DBEAFE"/>
+            <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>주차장 규격</strong>이 법정 기준에 미달하는지</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#DBEAFE"/>
+            <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>사전점검 시 <strong>외부 점검업체 출입이 제한</strong>되었는지</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#DBEAFE"/>
+            <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>공사비 증액</strong>으로 추가부담금이 발생했는지</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10" fill="#DBEAFE"/>
+            <path d="M5.5 10.5L8.5 13.5L14.5 7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><strong>이사·대출·전학</strong> 등 실생활 피해가 발생했는지</span>
+        </li>
+      </ul>
+      <div class="checklist-note">
+        이 중 하나라도 해당된다면,<br>바로 입주지연·하자 소송을 준비하셔야 합니다.
+      </div>
+    </section>
+
+    <!-- Section 5: Calculator -->
+    <section class="section">
+      <h2 class="section-title">나의 예상 배상금 계산기</h2>
+      <div class="calc-box">
+        <div class="calc-fields">
+          <div class="calc-field">
+            <label for="calc-price">분양가 (만원)</label>
+            <input type="number" id="calc-price" placeholder="예: 45000" value="45000" min="0" />
+          </div>
+          <div class="calc-field">
+            <label for="calc-days">지연일수 (일)</label>
+            <input type="number" id="calc-days" placeholder="예: 120" value="120" min="0" />
+          </div>
+          <div class="calc-field">
+            <label for="calc-rate">지체상금 요율</label>
+            <select id="calc-rate">
+              <option value="1">1/1000</option>
+              <option value="2" selected>2/1000</option>
+              <option value="3">3/1000</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result">
+          <div>
+            <div class="calc-result-label">총 예상 배상금</div>
+            <div class="calc-breakdown">
+              <span class="calc-breakdown-item">지체상금: <span id="r-penalty">1,080만원</span></span>
+              <span class="calc-breakdown-item">+ 하자손해: 별도 산정</span>
+            </div>
+          </div>
+          <div class="calc-result-value">약 <span id="r-total">1,080</span>만원</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Cases -->
+    <section class="section">
+      <h2 class="section-title">유사 소송 승소 사례</h2>
+      <div class="case-grid">
+        <div class="case-card">
+          <span class="case-badge won">승소</span>
           <div class="case-name">헬리오시티</div>
-          <div class="case-info">500여명 참여</div>
+          <div class="case-amount">8.6억원</div>
+          <div class="case-desc">입주 지연 및 하자 소송<br>최종 배상 확정</div>
         </div>
-        <div class="case-amount">8.6억</div>
-      </div>
-      <div class="win-card">
-        <div>
-          <div class="case-name">래미안장위포레카운티</div>
-          <div class="case-info">집단소송 승소</div>
+        <div class="case-card">
+          <span class="case-badge won">승소</span>
+          <div class="case-name">래미안 장위</div>
+          <div class="case-amount">4억원</div>
+          <div class="case-desc">지체상금 청구 소송<br>조정 성립 완료</div>
         </div>
-        <div class="case-amount">4억</div>
-      </div>
-      <div class="win-card">
-        <div>
-          <div class="case-name">장위자이레디언트</div>
-          <div class="case-info">소송 진행중</div>
+        <div class="case-card">
+          <span class="case-badge ongoing">진행중</span>
+          <div class="case-name">장위자이 레디언트</div>
+          <div class="case-amount">청구 중</div>
+          <div class="case-desc">입주 지연 집단소송<br>1심 진행 중</div>
         </div>
-        <span class="case-status">진행중</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Timeline -->
-  <section class="section" style="background:#fff; margin:0 0 20px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding-top:28px; padding-bottom:28px;">
-    <div class="section-title" style="padding:0 0 0 0;">소송 절차</div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">1</div><div class="timeline-line"></div></div>
-        <div class="timeline-content">
-          <div class="t-title">온라인 접수</div>
-          <div class="t-desc">본 페이지에서 5분이면 완료</div>
+    <!-- Section 7: Firm intro -->
+    <section class="section">
+      <div class="firm-intro">
+        <div class="firm-intro-title">
+          법무법인 더 에이치 황해는<br>소송의 시작부터 끝까지,<br>승소를 위한 확실한 전략을 제안드립니다.
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">2</div><div class="timeline-line"></div></div>
-        <div class="timeline-content">
-          <div class="t-title">서류 제출</div>
-          <div class="t-desc">분양계약서·하자사진 업로드</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">3</div><div class="timeline-line"></div></div>
-        <div class="timeline-content">
-          <div class="t-title">수임계약</div>
-          <div class="t-desc">담당 변호사 배정 및 계약 체결</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">4</div><div class="timeline-line"></div></div>
-        <div class="timeline-content">
-          <div class="t-title">소송 제기</div>
-          <div class="t-desc">집단소송 법원 제출</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-left"><div class="timeline-dot">5</div><div class="timeline-line"></div></div>
-        <div class="timeline-content">
-          <div class="t-title">배상금 수령</div>
-          <div class="t-desc">승소 후 손해배상금 지급</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Firm Intro -->
-  <div class="firm-intro">
-    <div class="firm-card">
-      <div class="section-title" style="margin-bottom:18px;">법무법인 더 에이치 황해</div>
-      <div class="firm-stat">
-        <div class="firm-stat-item">
-          <div class="stat-num">#1</div>
-          <div class="stat-label">하자소송 압도적 1위</div>
-        </div>
-        <div class="firm-stat-item">
-          <div class="stat-num">17명</div>
-          <div class="stat-label">전문 변호사</div>
-        </div>
-      </div>
-      <div class="firm-cases">
-        <span class="firm-case-tag">SKT 집단소송</span>
-        <span class="firm-case-tag">쿠팡 소비자소송</span>
-        <span class="firm-case-tag">포항지진 피해소송</span>
-        <span class="firm-case-tag">헬리오시티</span>
-        <span class="firm-case-tag">래미안장위</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA floating-ish -->
-  <div style="padding:0 20px 28px; text-align:center;">
-    <button class="btn-cta" id="bottom-cta-btn" style="width:100%; border-radius:14px; height:52px; font-size:16px;">소송 접수하기</button>
-  </div>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-brand">법무법인 더 에이치 황해</div>
-    <div>인천광역시 미추홀구 소성로 163번길 17, 4층</div>
-    <div>대표번호: 032-251-1000 | 팩스: 032-251-1001</div>
-    <div style="margin-top:12px; font-size:10px; color:#64748B;">본 페이지의 정보는 법률 조언이 아니며, 개별 사안에 따라 결과가 다를 수 있습니다. 정확한 법률 상담은 변호사와 직접 상담하시기 바랍니다.</div>
-  </footer>
-</div>
-<!-- /PART A -->
-
-<!-- ═══════════════════════════════ PART B ═══════════════════════════════ -->
-<div id="part-b">
-
-  <!-- Progress Header -->
-  <div class="progress-header">
-    <div class="progress-top">
-      <button class="back-btn" id="back-btn" style="display:none;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        이전
-      </button>
-      <div class="progress-label" id="progress-label">Step 1 / 7</div>
-      <div class="progress-placeholder"></div>
-    </div>
-    <div class="progress-bar-wrap">
-      <div class="progress-bar-fill" id="progress-bar" style="width:14.28%"></div>
-    </div>
-  </div>
-
-  <!-- Steps -->
-  <div class="steps-wrap" id="steps-wrap">
-
-    <!-- Step 1: 신청 유형 -->
-    <div class="step active" data-step="1">
-      <div class="step-title">소송 신청 유형을 선택해주세요</div>
-      <div class="step-desc">참여 방법을 선택해주세요</div>
-      <div class="radio-cards">
-        <div class="radio-card selected" data-value="self" onclick="selectRadio(this, 'apply-type')">
-          <div class="radio-circle"><div class="radio-dot"></div></div>
-          <div class="radio-text">
-            <div class="r-title">본인 신청</div>
-            <div class="r-desc">신청자 본인 명의로 참여합니다</div>
+        <p class="firm-intro-sub">
+          풍부한 건설·부동산 소송 경험을 바탕으로, 입주예정자의 권리를 철저히 보호합니다.<br>
+          초기 무료 상담부터 판결 이후 집행까지 전 과정을 함께합니다.
+        </p>
+        <div class="firm-stats">
+          <div class="firm-stat">
+            <span class="firm-stat-num">300+</span>
+            <span class="firm-stat-label">집단소송 수행 건수</span>
           </div>
-        </div>
-        <div class="radio-card" data-value="rep" onclick="selectRadio(this, 'apply-type')">
-          <div class="radio-circle"><div class="radio-dot"></div></div>
-          <div class="radio-text">
-            <div class="r-title">대표자 신청</div>
-            <div class="r-desc">가족/단체의 대표자로 참여합니다</div>
+          <div class="firm-stat">
+            <span class="firm-stat-num">92%</span>
+            <span class="firm-stat-label">의뢰인 만족도</span>
+          </div>
+          <div class="firm-stat">
+            <span class="firm-stat-num">15년+</span>
+            <span class="firm-stat-label">건설 소송 전문 경력</span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Step 2: 기본 정보 -->
-    <div class="step" data-step="2">
-      <div class="step-title">기본 정보를 입력해주세요</div>
-      <div class="info-banner">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        본 신청은 미성년자와 외국인은 접수받지 않습니다
-      </div>
-      <div class="field-group">
-        <div class="field">
-          <label>이름<span class="req">*</span></label>
-          <input type="text" id="f-name" placeholder="홍길동">
+    <!-- Mobile form -->
+    <section class="section mobile-form-section" id="apply-form">
+      <h2 class="section-title">소송 참여 신청</h2>
+      <div class="sidebar-card" style="background:#fff;">
+        <div class="sidebar-form-title">주안 센트럴 파라곤<br>입주지연·하자 집단소송</div>
+        <div class="sidebar-form-sub">간편하게 소송 참여를 신청하세요</div>
+        <div id="mobile-form-wrap">
+          <form id="mobile-apply-form" novalidate>
+            <div class="form-field">
+              <label>이름 <span class="req">*</span></label>
+              <input type="text" name="name" placeholder="이름을 입력해주세요" required />
+            </div>
+            <div class="form-field">
+              <label>휴대폰 번호 <span class="req">*</span></label>
+              <input type="tel" name="phone" placeholder="휴대폰 번호를 입력해주세요" required maxlength="13" />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>동 <span class="req">*</span></label>
+                <select name="dong" required>
+                  <option value="">동 선택</option>
+                  <option>101동</option><option>102동</option><option>103동</option>
+                  <option>104동</option><option>105동</option><option>106동</option>
+                  <option>107동</option><option>108동</option><option>109동</option>
+                  <option>110동</option><option>111동</option><option>112동</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label>호수 <span class="req">*</span></label>
+                <input type="text" name="ho" placeholder="호수 입력" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label>전용면적</label>
+              <select name="area">
+                <option value="">면적 선택</option>
+                <option>51A㎡</option><option>51B㎡</option><option>59㎡</option>
+                <option>62A㎡</option><option>62B㎡</option><option>76㎡</option><option>84㎡</option>
+              </select>
+            </div>
+            <div class="privacy-check">
+              <input type="checkbox" id="mobile-privacy" required />
+              <label for="mobile-privacy">개인정보 수집·이용에 동의합니다. (이름, 연락처, 세대정보는 소송 참여 확인 목적으로만 사용됩니다.)</label>
+            </div>
+            <button type="submit" class="btn-submit">무료 상담 신청</button>
+          </form>
         </div>
-        <div class="field">
-          <label>연락처<span class="req">*</span></label>
-          <input type="tel" id="f-phone" placeholder="010-0000-0000" maxlength="13">
-        </div>
-        <div class="field">
-          <label>생년월일<span class="req">*</span></label>
-          <input type="text" id="f-birth" placeholder="YYMMDD" maxlength="6">
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 3: 세대 정보 -->
-    <div class="step" data-step="3">
-      <div class="step-title">세대 정보를 입력해주세요</div>
-      <div class="field-group">
-        <div class="field">
-          <label>동<span class="req">*</span></label>
-          <select id="f-dong">
-            <option value="">선택하세요</option>
-            <option>101동</option><option>102동</option><option>103동</option>
-            <option>104동</option><option>105동</option><option>106동</option>
-            <option>107동</option><option>108동</option><option>109동</option>
-            <option>110동</option><option>111동</option><option>112동</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>호수<span class="req">*</span></label>
-          <input type="text" id="f-unit" placeholder="예: 1201">
-        </div>
-        <div class="field">
-          <label>전용면적</label>
-          <select id="f-area">
-            <option value="">선택하세요</option>
-            <option>51A형</option><option>51B형</option><option>59형</option>
-            <option>62A형</option><option>62B형</option><option>76형</option><option>84형</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>분양가 (만원)</label>
-          <input type="number" id="f-price" placeholder="예: 50000" min="0">
-        </div>
-      </div>
-    </div>
-
-    <!-- Step 4: 하자 내용 -->
-    <div class="step" data-step="4">
-      <div class="step-title">하자 내용을 선택해주세요</div>
-      <div class="checkbox-grid">
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          바닥수평
-        </div>
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          창호불량
-        </div>
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          누수
-        </div>
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          곰팡이
-        </div>
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          주차장
-        </div>
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          타일파손
-        </div>
-        <div class="check-card" onclick="toggleCheck(this)">
-          <div class="check-box"><svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg></div>
-          기타
+        <div class="form-success" id="mobile-success">
+          <div class="form-success-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="24" fill="#D1FAE5"/>
+              <path d="M14 24.5L20.5 31L34 17" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="form-success-title">신청이 완료되었습니다.</div>
+          <p class="form-success-sub">영업일 기준 3일 이내에 담당 변호사가 직접 연락드립니다.<br>추가 문의: 032-251-1000</p>
+          <span class="receipt-num" id="mobile-receipt-num"></span>
         </div>
       </div>
-      <div class="field">
-        <label>하자 설명 (선택)</label>
-        <textarea id="f-defect-desc" placeholder="구체적인 하자 내용을 설명해주세요"></textarea>
+    </section>
+
+  </main><!-- /.main-col -->
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+
+    <!-- Apply form card -->
+    <div class="sidebar-card" id="sidebar-form-card">
+      <div class="sidebar-form-title">주안 센트럴 파라곤<br>입주지연·하자 집단소송</div>
+      <div class="sidebar-form-sub">간편하게 소송 참여를 신청하세요</div>
+      <div id="sidebar-form-wrap">
+        <form id="sidebar-apply-form" novalidate>
+          <div class="form-field">
+            <label>이름 <span class="req">*</span></label>
+            <input type="text" name="name" placeholder="이름을 입력해주세요" required />
+          </div>
+          <div class="form-field">
+            <label>휴대폰 번호 <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="휴대폰 번호를 입력해주세요" required maxlength="13" />
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>동 <span class="req">*</span></label>
+              <select name="dong" required>
+                <option value="">동 선택</option>
+                <option>101동</option><option>102동</option><option>103동</option>
+                <option>104동</option><option>105동</option><option>106동</option>
+                <option>107동</option><option>108동</option><option>109동</option>
+                <option>110동</option><option>111동</option><option>112동</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>호수 <span class="req">*</span></label>
+              <input type="text" name="ho" placeholder="호수" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>전용면적</label>
+            <select name="area">
+              <option value="">면적 선택</option>
+              <option>51A㎡</option><option>51B㎡</option><option>59㎡</option>
+              <option>62A㎡</option><option>62B㎡</option><option>76㎡</option><option>84㎡</option>
+            </select>
+          </div>
+          <div class="privacy-check">
+            <input type="checkbox" id="sidebar-privacy" required />
+            <label for="sidebar-privacy">개인정보 수집·이용에 동의합니다. (이름, 연락처, 세대정보는 소송 참여 확인 목적으로만 사용됩니다.)</label>
+          </div>
+          <button type="submit" class="btn-submit">무료 상담 신청</button>
+        </form>
       </div>
-    </div>
-
-    <!-- Step 5: 서류 첨부 -->
-    <div class="step" data-step="5">
-      <div class="step-title">인증 자료를 업로드해주세요</div>
-      <div class="step-desc">아래 자료를 업로드해주세요</div>
-
-      <div class="upload-sub">분양계약서 사본 <span style="color:var(--required)">*</span></div>
-      <div class="file-zone" id="zone-contract" onclick="document.getElementById('file-contract').click()">
-        <input type="file" id="file-contract" accept="image/*,application/pdf" onchange="handleFile(this,'zone-contract','file-contract-name')">
-        <div class="upload-icon">
-          <svg viewBox="0 0 36 36" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 4v20M10 12l8-8 8 8M6 28h24"/>
+      <div class="form-success" id="sidebar-success">
+        <div class="form-success-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#D1FAE5"/>
+            <path d="M14 24.5L20.5 31L34 17" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <div class="upload-label">파일 선택 또는 드래그</div>
-        <div class="upload-hint">이미지 또는 PDF · 최대 20MB</div>
-        <div class="file-name" id="file-contract-name"></div>
-      </div>
-
-      <div class="upload-sub" style="margin-top:4px;">하자 사진 <span style="color:var(--text-sub);font-weight:400;">(선택)</span></div>
-      <div class="upload-opt">여러 장 업로드 가능합니다</div>
-      <div class="file-zone" id="zone-photos" onclick="document.getElementById('file-photos').click()">
-        <input type="file" id="file-photos" accept="image/*" multiple onchange="handleFile(this,'zone-photos','file-photos-name')">
-        <div class="upload-icon">
-          <svg viewBox="0 0 36 36" fill="none" stroke="#1A73E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="8" width="32" height="22" rx="3"/>
-            <circle cx="18" cy="19" r="6"/>
-            <path d="M13 8V6h10v2"/>
-          </svg>
-        </div>
-        <div class="upload-label">사진 선택 또는 드래그</div>
-        <div class="upload-hint">여러 장 동시 선택 가능</div>
-        <div class="file-name" id="file-photos-name"></div>
+        <div class="form-success-title">신청이 완료되었습니다.</div>
+        <p class="form-success-sub">영업일 기준 3일 이내에 담당 변호사가 직접 연락드립니다.<br>추가 문의: 032-251-1000</p>
+        <span class="receipt-num" id="sidebar-receipt-num"></span>
       </div>
     </div>
 
-    <!-- Step 6: 동의 -->
-    <div class="step" data-step="6">
-      <div class="step-title">유의사항 및 약관 동의</div>
-      <div class="accordion" id="accordion">
-        <div class="accord-item">
-          <div class="accord-head" onclick="toggleAccord(this.parentElement)">
-            <span class="accord-head-title">가입시점 유의사항</span>
-            <svg class="accord-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="accord-body">
-            소송 접수 후에는 동일 사건에 대해 다른 법무법인에 중복 위임하실 수 없습니다. 이미 다른 법무법인에 의뢰하신 경우 반드시 기존 계약을 해지하신 후 신청해주세요.
-          </div>
-        </div>
-        <div class="accord-item">
-          <div class="accord-head" onclick="toggleAccord(this.parentElement)">
-            <span class="accord-head-title">승소 시 정산 안내</span>
-            <svg class="accord-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="accord-body">
-            승소 시 수임료는 실제 수령 배상금의 일정 비율로 정산됩니다. 구체적인 착수금 및 성공보수 비율은 추후 별도 안내드릴 예정입니다. 패소 시 별도 청구 비용은 없습니다.
-          </div>
-        </div>
-        <div class="accord-item">
-          <div class="accord-head" onclick="toggleAccord(this.parentElement)">
-            <span class="accord-head-title">환불정책</span>
-            <svg class="accord-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="accord-body">
-            수임계약 체결 전 단계에서는 언제든지 신청을 취소하실 수 있습니다. 수임계약 체결 후 소송 제기 전 철회 시에는 실비용이 청구될 수 있습니다.
-          </div>
-        </div>
-        <div class="accord-item">
-          <div class="accord-head" onclick="toggleAccord(this.parentElement)">
-            <span class="accord-head-title">면책고지</span>
-            <svg class="accord-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="accord-body">
-            본 페이지의 예상 배상금액은 참고용이며, 실제 소송 결과는 개별 계약 조건, 법원의 판단, 증거 자료 등에 따라 달라질 수 있습니다. 법무법인 더 에이치 황해는 특정 결과를 보장하지 않습니다.
-          </div>
-        </div>
-        <div class="accord-item">
-          <div class="accord-head" onclick="toggleAccord(this.parentElement)">
-            <span class="accord-head-title">증거자료 안내</span>
-            <svg class="accord-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="accord-body">
-            분양계약서, 하자보수 요청 내역, 하자 사진 등 관련 증거자료는 소송의 핵심입니다. 가능한 한 많은 자료를 준비해 주시면 소송에 큰 도움이 됩니다.
-          </div>
-        </div>
+    <!-- Firm info card -->
+    <div class="sidebar-card firm-info-card">
+      <div class="firm-info-name">법무법인 더 에이치 황해</div>
+      <div class="firm-info-row">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 5a2 2 0 0 1 2-2h2.5l1.5 4-1.5 1a11 11 0 0 0 4.5 4.5l1-1.5 4 1.5v2.5a2 2 0 0 1-2 2C7.6 17 3 12.4 3 7V5Z" stroke="#6B7280" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+        <span><strong>032-251-1000</strong></span>
       </div>
-      <div class="agree-items">
-        <div class="agree-item" id="agree1" onclick="toggleAgree('agree1')">
-          <div class="agree-check">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg>
-          </div>
-          <span class="agree-text">[필수] 위 내용을 모두 확인하고 동의합니다</span>
-        </div>
-        <div class="agree-item" id="agree2" onclick="toggleAgree('agree2')">
-          <div class="agree-check">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg>
-          </div>
-          <span class="agree-text">[필수] 수임계약서 확인</span>
-        </div>
-        <div class="agree-item" id="agree3" onclick="toggleAgree('agree3')">
-          <div class="agree-check">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 6 5 10 11 2"/></svg>
-          </div>
-          <span class="agree-text">[필수] 개인정보 처리방침 동의</span>
-        </div>
+      <div class="firm-info-row">
+        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2C7.24 2 5 4.24 5 7c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5Zm0 6.5A1.5 1.5 0 1 1 10 5a1.5 1.5 0 0 1 0 3Z" fill="#6B7280"/>
+        </svg>
+        <span>인천 미추홀구 학익로 60</span>
       </div>
     </div>
 
-    <!-- Step 7: 완료 -->
-    <div class="step" data-step="7">
-      <div class="complete-wrap">
-        <div class="complete-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="complete-title">주안 센트럴 파라곤&#10;집단소송 접수가 완료되었습니다</div>
-        <div class="receipt-number" id="receipt-number">접수번호: JUAN-0000</div>
-        <div class="complete-desc">담당 변호사가 영업일 기준 3일 내<br>연락드리겠습니다</div>
-        <button class="btn-cta" onclick="handleComplete()" style="width:100%; border-radius:14px; height:52px; font-size:16px;">완료하기</button>
-      </div>
-    </div>
+  </aside><!-- /.sidebar -->
 
-  </div><!-- /steps-wrap -->
+</div><!-- /.page-body -->
 
-  <!-- Step Footer (CTA) -->
-  <div class="step-footer" id="step-footer">
-    <button class="btn-next" id="next-btn" onclick="nextStep()">다음으로</button>
-  </div>
-
+<!-- ── MOBILE CTA BAR ── -->
+<div class="mobile-cta-bar">
+  <a href="#apply-form">소송 참여 신청하기 &gt;</a>
 </div>
-<!-- /PART B -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">법무법인 더 에이치 황해</div>
+    <div class="footer-info">
+      사업자등록번호 : 000-00-00000 &nbsp;|&nbsp; 대표변호사 : 황해 외<br>
+      전화 : 032-251-1000 &nbsp;|&nbsp; 인천 미추홀구 학익로 60<br>
+      집단소송 전담 : classaction.lawfirmthe-h.com
+    </div>
+    <div class="footer-copy">COPYRIGHT &copy; 2026 법무법인 더 에이치 황해. ALL RIGHTS RESERVED.</div>
+  </div>
+</footer>
 
 <script>
-// ─── State ───────────────────────────────────────────────────────────────────
-let currentStep = 1;
-const TOTAL_STEPS = 7;
-
-// ─── Part A / B switch ───────────────────────────────────────────────────────
-function showPartB() {
-  document.getElementById('part-a').style.display = 'none';
-  const pb = document.getElementById('part-b');
-  pb.classList.add('active');
-  window.scrollTo(0, 0);
-  updateProgress();
-}
-
-document.getElementById('hero-cta-btn').addEventListener('click', showPartB);
-document.getElementById('bottom-cta-btn').addEventListener('click', showPartB);
-
-// ─── Progress ────────────────────────────────────────────────────────────────
-function updateProgress() {
-  const pct = (currentStep / TOTAL_STEPS) * 100;
-  document.getElementById('progress-bar').style.width = pct + '%';
-  document.getElementById('progress-label').textContent = 'Step ' + currentStep + ' / ' + TOTAL_STEPS;
-
-  const backBtn = document.getElementById('back-btn');
-  backBtn.style.display = currentStep >= 2 && currentStep <= 6 ? 'flex' : 'none';
-
-  const stepFooter = document.getElementById('step-footer');
-  stepFooter.style.display = currentStep === 7 ? 'none' : 'block';
-}
-
-// ─── Navigation ──────────────────────────────────────────────────────────────
-function goToStep(n) {
-  const current = document.querySelector('.step.active');
-  const target = document.querySelector('[data-step="' + n + '"]');
-  if (!target) return;
-
-  if (current) {
-    current.style.transition = 'none';
-    current.style.opacity = '0';
-    current.style.transform = 'translateX(-20px)';
-    current.classList.remove('active');
-    setTimeout(() => {
-      current.style.transition = '';
-      current.style.opacity = '';
-      current.style.transform = '';
-    }, 10);
+  /* ── CALCULATOR ── */
+  function calcResult() {
+    var price = parseFloat(document.getElementById('calc-price').value) || 0;
+    var days  = parseFloat(document.getElementById('calc-days').value)  || 0;
+    var rate  = parseFloat(document.getElementById('calc-rate').value)  || 2;
+    var penalty = Math.round(price * rate / 1000 * days);
+    document.getElementById('r-penalty').textContent = penalty.toLocaleString() + '만원';
+    document.getElementById('r-total').textContent   = penalty.toLocaleString();
   }
 
-  target.style.opacity = '0';
-  target.style.transform = 'translateX(20px)';
-  target.classList.add('active');
+  document.getElementById('calc-price').addEventListener('input', calcResult);
+  document.getElementById('calc-days').addEventListener('input',  calcResult);
+  document.getElementById('calc-rate').addEventListener('change', calcResult);
+  calcResult();
 
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      target.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-      target.style.opacity = '1';
-      target.style.transform = 'translateX(0)';
+  /* ── PHONE AUTO HYPHEN ── */
+  function formatPhone(input) {
+    input.addEventListener('input', function() {
+      var v = this.value.replace(/\D/g, '');
+      if (v.length < 4) { this.value = v; }
+      else if (v.length < 8) { this.value = v.slice(0,3) + '-' + v.slice(3); }
+      else if (v.length <= 11) { this.value = v.slice(0,3) + '-' + v.slice(3,7) + '-' + v.slice(7); }
     });
-  });
-
-  currentStep = n;
-  updateProgress();
-  window.scrollTo(0, 0);
-
-  if (n === 7) {
-    const num = Math.floor(1000 + Math.random() * 9000);
-    document.getElementById('receipt-number').textContent = '접수번호: JUAN-' + num;
   }
-}
 
-function nextStep() {
-  if (!validateStep(currentStep)) return;
-  if (currentStep < TOTAL_STEPS) goToStep(currentStep + 1);
-}
+  document.querySelectorAll('input[type="tel"]').forEach(formatPhone);
 
-document.getElementById('back-btn').addEventListener('click', () => {
-  if (currentStep > 1) goToStep(currentStep - 1);
-});
-
-// ─── Validation ──────────────────────────────────────────────────────────────
-function validateStep(step) {
-  if (step === 2) {
-    const name = document.getElementById('f-name').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    const birth = document.getElementById('f-birth').value.trim();
-    if (!name || !phone || !birth) {
-      shakeNext();
-      return false;
-    }
+  /* ── RECEIPT NUMBER GENERATOR ── */
+  function genReceipt() {
+    return 'JCP-' + new Date().getFullYear() + '-' + String(Math.floor(Math.random() * 90000) + 10000);
   }
-  if (step === 3) {
-    const dong = document.getElementById('f-dong').value;
-    const unit = document.getElementById('f-unit').value.trim();
-    if (!dong || !unit) {
-      shakeNext();
-      return false;
-    }
+
+  /* ── FORM SUBMIT ── */
+  function handleSubmit(formId, wrapId, successId, receiptId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var inputs = form.querySelectorAll('[required]');
+      var ok = true;
+      inputs.forEach(function(el) {
+        if (el.type === 'checkbox' && !el.checked) { ok = false; el.focus(); }
+        else if (el.type !== 'checkbox' && !el.value.trim()) { ok = false; el.focus(); }
+      });
+      if (!ok) { return; }
+      document.getElementById(wrapId).style.display  = 'none';
+      var suc = document.getElementById(successId);
+      suc.style.display = 'block';
+      document.getElementById(receiptId).textContent = '접수번호: ' + genReceipt();
+    });
   }
-  if (step === 6) {
-    const a1 = document.getElementById('agree1').classList.contains('checked');
-    const a2 = document.getElementById('agree2').classList.contains('checked');
-    const a3 = document.getElementById('agree3').classList.contains('checked');
-    if (!a1 || !a2 || !a3) {
-      shakeNext();
-      return false;
-    }
-  }
-  return true;
-}
 
-function shakeNext() {
-  const btn = document.getElementById('next-btn');
-  btn.style.transition = 'transform 0.1s';
-  btn.style.transform = 'translateX(-6px)';
-  setTimeout(() => btn.style.transform = 'translateX(6px)', 100);
-  setTimeout(() => btn.style.transform = 'translateX(-4px)', 200);
-  setTimeout(() => btn.style.transform = 'translateX(0)', 300);
-}
-
-// ─── Radio ───────────────────────────────────────────────────────────────────
-function selectRadio(el, group) {
-  document.querySelectorAll('[data-value]').forEach(card => {
-    if (card.closest('.radio-cards')) card.classList.remove('selected');
-  });
-  el.classList.add('selected');
-}
-
-// ─── Checkbox ────────────────────────────────────────────────────────────────
-function toggleCheck(el) {
-  el.classList.toggle('checked');
-}
-
-// ─── Accordion ───────────────────────────────────────────────────────────────
-function toggleAccord(item) {
-  item.classList.toggle('open');
-}
-
-// ─── Agree ───────────────────────────────────────────────────────────────────
-function toggleAgree(id) {
-  document.getElementById(id).classList.toggle('checked');
-}
-
-// ─── File Upload ─────────────────────────────────────────────────────────────
-function handleFile(input, zoneId, nameId) {
-  const zone = document.getElementById(zoneId);
-  const nameEl = document.getElementById(nameId);
-  if (input.files && input.files.length > 0) {
-    const names = Array.from(input.files).map(f => f.name).join(', ');
-    nameEl.textContent = names;
-    zone.style.borderColor = '#1A73E8';
-    zone.style.background = '#EBF3FF';
-  }
-}
-
-// Drag & Drop
-['zone-contract', 'zone-photos'].forEach(zoneId => {
-  const zone = document.getElementById(zoneId);
-  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
-  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
-  zone.addEventListener('drop', e => {
-    e.preventDefault();
-    zone.classList.remove('dragover');
-    const inputId = zoneId === 'zone-contract' ? 'file-contract' : 'file-photos';
-    const nameId = zoneId === 'zone-contract' ? 'file-contract-name' : 'file-photos-name';
-    const input = document.getElementById(inputId);
-    // DataTransfer to input
-    try {
-      const dt = new DataTransfer();
-      Array.from(e.dataTransfer.files).forEach(f => dt.items.add(f));
-      input.files = dt.files;
-      handleFile(input, zoneId, nameId);
-    } catch(err) {}
-  });
-});
-
-// ─── Phone auto-hyphen ───────────────────────────────────────────────────────
-document.getElementById('f-phone').addEventListener('input', function() {
-  let v = this.value.replace(/\D/g, '');
-  if (v.length <= 3) this.value = v;
-  else if (v.length <= 7) this.value = v.slice(0,3) + '-' + v.slice(3);
-  else this.value = v.slice(0,3) + '-' + v.slice(3,7) + '-' + v.slice(7,11);
-});
-
-// ─── Calculator ──────────────────────────────────────────────────────────────
-function calcDamage() {
-  const price = parseFloat(document.getElementById('calc-price').value) || 0;
-  const days = parseFloat(document.getElementById('calc-days').value) || 0;
-  const rate = parseFloat(document.getElementById('calc-rate').value) || 0.002;
-
-  const delay = price * rate * days;
-  const interest = price * 0.3 * 0.05 / 365 * days;
-  const total = Math.round(delay + interest);
-
-  const el = document.getElementById('calc-result-amount');
-  if (total > 0) {
-    el.textContent = '약 ' + total.toLocaleString() + '만원';
-  } else {
-    el.textContent = '약 0원';
-  }
-}
-
-['calc-price', 'calc-days', 'calc-rate'].forEach(id => {
-  document.getElementById(id).addEventListener('input', calcDamage);
-  document.getElementById(id).addEventListener('change', calcDamage);
-});
-calcDamage();
-
-// ─── Complete ────────────────────────────────────────────────────────────────
-function handleComplete() {
-  try { window.close(); } catch(e) {}
-  // fallback: back to landing
-  document.getElementById('part-b').classList.remove('active');
-  document.getElementById('part-b').style.display = 'none';
-  document.getElementById('part-a').style.display = '';
-  currentStep = 1;
-  goToStep(1);
-  window.scrollTo(0, 0);
-  // re-show part-a
-  document.getElementById('part-a').removeAttribute('style');
-}
+  handleSubmit('sidebar-apply-form', 'sidebar-form-wrap', 'sidebar-success', 'sidebar-receipt-num');
+  handleSubmit('mobile-apply-form',  'mobile-form-wrap',  'mobile-success',  'mobile-receipt-num');
 </script>
 </body>
 </html>
