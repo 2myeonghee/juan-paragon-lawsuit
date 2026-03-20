@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주안 센트럴 파라곤 집단소송 | 법무법인 더 에이치 황해</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #2C3E50;
+      --primary-light: #34495E;
+      --accent: #E74C3C;
+      --accent-dark: #C0392B;
+      --bg: #F8F9FA;
+      --white: #FFFFFF;
+      --text-main: #1A202C;
+      --text-sub: #4A5568;
+      --text-muted: #718096;
+      --border: #E2E8F0;
+      --card-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --card-radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+
+    .logo-text {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .header-tel {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .header-tel svg { flex-shrink: 0; }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(160deg, #2C3E50 0%, #3D5166 100%);
+      padding: 40px 20px 48px;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(231,76,60,0.18);
+      border: 1px solid rgba(231,76,60,0.4);
+      color: #FC8D7A;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+      word-break: keep-all;
+    }
+
+    .hero h1 span { color: #FC8D7A; }
+
+    .hero-sub {
+      color: #CBD5E1;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      word-break: keep-all;
+    }
+
+    .hero-sub strong { color: #FC8D7A; font-weight: 700; }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px 36px;
+      border-radius: 28px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: -0.2px;
+      transition: background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-cta:active { background: var(--accent-dark); }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 40px 16px; }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+      letter-spacing: -0.4px;
+    }
+
+    .section-title-accent { color: var(--accent); }
+
+    /* ─── STATUS CARDS ─── */
+    .status-section { background: var(--white); }
+
+    .status-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .status-card {
+      background: var(--bg);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .status-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(231,76,60,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .status-card-body {}
+    .status-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .status-card-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    /* ─── DAMAGES ─── */
+    .damages-section { background: var(--primary); }
+
+    .damages-section .section-title { color: var(--white); }
+
+    .damages-amount {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .damages-label {
+      font-size: 12px;
+      color: #94A3B8;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .damages-number {
+      font-size: 42px;
+      font-weight: 800;
+      color: #FC8D7A;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .damages-number-sub {
+      font-size: 14px;
+      color: #94A3B8;
+      margin-top: 6px;
+    }
+
+    .damages-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .damages-table th,
+    .damages-table td {
+      padding: 13px 16px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .damages-table th {
+      background: rgba(255,255,255,0.08);
+      color: #CBD5E1;
+      font-weight: 600;
+      width: 36%;
+    }
+
+    .damages-table td { color: #E2E8F0; }
+
+    .damages-table tr:last-child th,
+    .damages-table tr:last-child td { border-bottom: none; }
+
+    /* ─── CASES ─── */
+    .cases-section { background: var(--bg); }
+
+    .case-cards { display: flex; flex-direction: column; gap: 12px; }
+
+    .case-card {
+      background: var(--white);
+      border-radius: var(--card-radius);
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      border-left: 4px solid var(--accent);
+    }
+
+    .case-card-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .case-result {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .case-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
+    }
+
+    .badge-win {
+      background: rgba(39,174,96,0.12);
+      color: #27AE60;
+    }
+
+    .badge-ongoing {
+      background: rgba(243,156,18,0.12);
+      color: #D97706;
+    }
+
+    .case-amount {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .case-detail {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* ─── STEPS ─── */
+    .steps-section { background: var(--white); }
+
+    .steps { display: flex; flex-direction: column; gap: 0; }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      width: 2px;
+      height: calc(100% - 16px);
+      background: #E2E8F0;
+    }
+
+    .step-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-body { padding-bottom: 28px; padding-top: 6px; }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    /* ─── FORM ─── */
+    .form-section {
+      background: var(--bg);
+      padding-bottom: 48px;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 28px 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    .form-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .form-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .form-group { margin-bottom: 18px; }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-bottom: 7px;
+    }
+
+    .form-label .req { color: var(--accent); margin-left: 2px; }
+
+    .form-input,
+    .form-select {
+      width: 100%;
+      height: 50px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0 14px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      color: var(--text-main);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus { border-color: var(--primary); }
+
+    .form-input.error,
+    .form-select.error { border-color: var(--accent); }
+
+    .form-select-wrap {
+      position: relative;
+    }
+
+    .form-select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid var(--text-muted);
+      pointer-events: none;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checkbox-item span {
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .file-upload-wrap {
+      border: 1.5px dashed var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .file-upload-wrap:hover { border-color: var(--primary); background: #F0F4F8; }
+
+    .file-upload-wrap input[type="file"] {
+      display: none;
+    }
+
+    .file-upload-icon { margin-bottom: 8px; }
+    .file-upload-text { font-size: 13px; color: var(--text-sub); }
+    .file-upload-text strong { color: var(--primary); }
+    .file-name-display {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .privacy-wrap {
+      background: #F7F8FA;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .privacy-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .privacy-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 1px;
+      cursor: pointer;
+    }
+
+    .privacy-text {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .privacy-text strong { color: var(--primary); }
+
+    .btn-submit {
+      width: 100%;
+      height: 56px;
+      background: var(--primary);
+      color: var(--white);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 28px;
+      cursor: pointer;
+      margin-top: 8px;
+      letter-spacing: -0.3px;
+      transition: background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-submit:active { background: #1A2634; }
+
+    .form-error-msg {
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 5px;
+      display: none;
+    }
+
+    /* ─── SUCCESS ─── */
+    .success-card {
+      display: none;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 48px 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(39,174,96,0.10);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .success-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .success-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      line-height: 1.7;
+      word-break: keep-all;
+    }
+
+    .receipt-box {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 14px 20px;
+      display: inline-block;
+    }
+
+    .receipt-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .receipt-number {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
+
+    /* ─── FIRM ─── */
+    .firm-section { background: var(--white); }
+
+    .firm-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .firm-subtitle {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .firm-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .firm-badge {
+      background: rgba(44,62,80,0.07);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .firm-cases {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      line-height: 1.8;
+      word-break: keep-all;
+    }
+
+    .firm-contact {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .firm-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .firm-contact-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(44,62,80,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .firm-contact-text {
+      font-size: 13px;
+      color: var(--text-sub);
+    }
+
+    .firm-contact-text a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1A2634;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .footer-firm {
+      color: #94A3B8;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .footer-info {
+      color: #64748B;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-copy {
+      color: #4A5568;
+      font-size: 11px;
+      margin-top: 12px;
+    }
+
+    /* ─── FLOAT CTA ─── */
+    .float-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      z-index: 99;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 10px;
+    }
+
+    .float-cta .btn-cta {
+      flex: 1;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    .float-tel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 28px;
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      white-space: nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 16px;
+    }
+
+    /* ─── RESPONSIVE (bigger screens) ─── */
+    @media (min-width: 480px) {
+      body { max-width: 480px; margin: 0 auto; box-shadow: 0 0 40px rgba(0,0,0,0.08); }
+      .float-cta { max-width: 480px; left: 50%; transform: translateX(-50%); }
+    }
+
+    /* body padding for float cta */
+    body { padding-bottom: 76px; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <span class="logo-text">법무법인 더 에이치 황해</span>
+    <a href="tel:032-251-1000" class="header-tel">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+      </svg>
+      032-251-1000
+    </a>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-tag">주안 센트럴 파라곤 입주예정자 여러분</div>
+    <h1>입주지연·하자 집단소송<br /><span>지금 참여하세요</span></h1>
+    <p class="hero-sub">
+      세대당 평균 <strong>100건+ 하자 발견</strong> | <strong>4개월 입주 지연</strong><br />
+      가구당 <strong>9,000만원 이상</strong> 손해 예상
+    </p>
+    <a href="#apply-form" class="btn-cta">소송 참여 신청하기</a>
+  </section>
+
+  <!-- ─── STATUS CARDS ─── -->
+  <section class="status-section">
+    <h2 class="section-title">현재 상황</h2>
+    <div class="status-cards">
+      <div class="status-card">
+        <div class="status-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <div class="status-card-body">
+          <div class="status-card-title">4개월+ 입주 지연</div>
+          <div class="status-card-desc">당초 2025년 12월 예정 → 2026년 3월 31일로 연장<br />추가 지연 가능성 상존</div>
+        </div>
+      </div>
+      <div class="status-card">
+        <div class="status-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="status-card-body">
+          <div class="status-card-title">세대당 100건+ 하자</div>
+          <div class="status-card-desc">바닥 수평 불량 · 창호 불량<br />누수 · 곰팡이 다수 발견</div>
+        </div>
+      </div>
+      <div class="status-card">
+        <div class="status-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E74C3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div class="status-card-body">
+          <div class="status-card-title">주차장 규격 미달 의혹</div>
+          <div class="status-card-desc">사전점검 기간 출입 통제<br />주차면 규격 부적합 의혹</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── DAMAGES ─── -->
+  <section class="damages-section">
+    <h2 class="section-title">예상 손해배상 금액</h2>
+    <div class="damages-amount">
+      <div class="damages-label">가구당 예상 배상액</div>
+      <div class="damages-number">9,000만원+</div>
+      <div class="damages-number-sub">실제 소송 결과에 따라 상이할 수 있음</div>
+    </div>
+    <table class="damages-table">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>지체상금</th>
+          <td>공사금액의 1~3/1000 × 지연일수</td>
+        </tr>
+        <tr>
+          <th>연체이자</th>
+          <td>중도금·잔금 연체이자</td>
+        </tr>
+        <tr>
+          <th>추가부담금</th>
+          <td>공사비 증액분</td>
+        </tr>
+        <tr>
+          <th>생활피해</th>
+          <td>이사·대출·전학 등 실손해</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ─── CASES ─── -->
+  <section class="cases-section">
+    <h2 class="section-title">승소 <span class="section-title-accent">사례</span></h2>
+    <div class="case-cards">
+      <div class="case-card">
+        <div class="case-card-name">헬리오시티 (서울 송파)</div>
+        <div class="case-result">
+          <span class="case-badge badge-win">승소</span>
+          <span class="case-amount">8.6억원 배상</span>
+        </div>
+        <div class="case-detail">입주예정자 500여명 참여 · 하자 및 입주 지연 소송</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-name">래미안 장위 포레카운티</div>
+        <div class="case-result">
+          <span class="case-badge badge-win">승소</span>
+          <span class="case-amount">4억원 배상</span>
+        </div>
+        <div class="case-detail">입주 지연에 따른 지체상금·생활피해 배상</div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-name">장위자이 레디언트</div>
+        <div class="case-result">
+          <span class="case-badge badge-ongoing">진행중</span>
+          <span style="font-size:14px;font-weight:700;color:#D97706;">소송 진행중</span>
+        </div>
+        <div class="case-detail">현재 집단소송 참여자 모집 · 소송 제기 진행중</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STEPS ─── -->
+  <section class="steps-section">
+    <h2 class="section-title">소송 참여 절차</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">온라인 참여 신청</div>
+          <div class="step-desc">아래 신청 폼 작성 (약 3분 소요)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">서류 제출</div>
+          <div class="step-desc">분양계약서 사본, 하자 사진 등 업로드</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">수임계약 체결</div>
+          <div class="step-desc">온라인 전자서명 (방문 불필요)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">소송 제기</div>
+          <div class="step-desc">황해 변호사팀이 모든 절차 진행</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">배상금 수령</div>
+          <div class="step-desc">승소 시 가구별 개별 지급</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FORM ─── -->
+  <section class="form-section" id="apply-form">
+    <div class="form-card" id="form-wrap">
+      <div class="form-title">집단소송 참여 신청</div>
+      <div class="form-subtitle">작성하신 정보는 소송 접수 목적으로만 사용됩니다.</div>
+
+      <form id="apply-form-el" novalidate>
+
+        <!-- 이름 -->
+        <div class="form-group">
+          <label class="form-label" for="f-name">이름<span class="req">*</span></label>
+          <input class="form-input" type="text" id="f-name" name="name" placeholder="홍길동" autocomplete="name" />
+          <div class="form-error-msg" id="err-name">이름을 입력해 주세요.</div>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="form-group">
+          <label class="form-label" for="f-tel">연락처<span class="req">*</span></label>
+          <input class="form-input" type="tel" id="f-tel" name="tel" placeholder="010-0000-0000" autocomplete="tel" inputmode="numeric" maxlength="13" />
+          <div class="form-error-msg" id="err-tel">연락처를 올바르게 입력해 주세요.</div>
+        </div>
+
+        <!-- 동 -->
+        <div class="form-group">
+          <label class="form-label" for="f-dong">동<span class="req">*</span></label>
+          <div class="form-select-wrap">
+            <select class="form-select" id="f-dong" name="dong">
+              <option value="">동을 선택하세요</option>
+              <option value="101">101동</option>
+              <option value="102">102동</option>
+              <option value="103">103동</option>
+              <option value="104">104동</option>
+              <option value="105">105동</option>
+              <option value="106">106동</option>
+              <option value="107">107동</option>
+              <option value="108">108동</option>
+              <option value="109">109동</option>
+              <option value="110">110동</option>
+              <option value="111">111동</option>
+              <option value="112">112동</option>
+            </select>
+          </div>
+          <div class="form-error-msg" id="err-dong">동을 선택해 주세요.</div>
+        </div>
+
+        <!-- 호수 -->
+        <div class="form-group">
+          <label class="form-label" for="f-ho">호수<span class="req">*</span></label>
+          <input class="form-input" type="text" id="f-ho" name="ho" placeholder="예: 1201" inputmode="numeric" />
+          <div class="form-error-msg" id="err-ho">호수를 입력해 주세요.</div>
+        </div>
+
+        <!-- 전용면적 -->
+        <div class="form-group">
+          <label class="form-label" for="f-area">전용면적</label>
+          <div class="form-select-wrap">
+            <select class="form-select" id="f-area" name="area">
+              <option value="">면적을 선택하세요 (선택)</option>
+              <option value="51A">51A 타입</option>
+              <option value="51B">51B 타입</option>
+              <option value="59">59 타입</option>
+              <option value="62A">62A 타입</option>
+              <option value="62B">62B 타입</option>
+              <option value="76">76 타입</option>
+              <option value="84">84 타입</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 하자 유형 -->
+        <div class="form-group">
+          <label class="form-label">하자 유형 (해당 항목 모두 선택)</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" name="defect" value="바닥수평" />
+              <span>바닥 수평 불량</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="defect" value="창호불량" />
+              <span>창호 불량</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="defect" value="누수" />
+              <span>누수</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="defect" value="곰팡이" />
+              <span>곰팡이</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="defect" value="주차장" />
+              <span>주차장 불량</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="defect" value="기타" />
+              <span>기타</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 분양계약서 -->
+        <div class="form-group">
+          <label class="form-label">분양계약서 사본<span class="req">*</span></label>
+          <label class="file-upload-wrap" for="f-contract">
+            <input type="file" id="f-contract" name="contract" accept="image/*,.pdf" />
+            <div class="file-upload-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <div class="file-upload-text"><strong>파일 선택</strong> 또는 탭하여 업로드<br /><span style="font-size:11px;color:#94A3B8;">이미지 / PDF (최대 10MB)</span></div>
+            <div class="file-name-display" id="contract-name"></div>
+          </label>
+          <div class="form-error-msg" id="err-contract">분양계약서를 첨부해 주세요.</div>
+        </div>
+
+        <!-- 하자 사진 -->
+        <div class="form-group">
+          <label class="form-label">하자 사진 <span style="font-weight:400;color:var(--text-muted)">(선택, 여러 장 가능)</span></label>
+          <label class="file-upload-wrap" for="f-defect-photos">
+            <input type="file" id="f-defect-photos" name="defect_photos" accept="image/*" multiple />
+            <div class="file-upload-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <div class="file-upload-text"><strong>사진 선택</strong> (복수 선택 가능)<br /><span style="font-size:11px;color:#94A3B8;">하자 부위 사진을 첨부하시면 소송에 유리합니다</span></div>
+            <div class="file-name-display" id="defect-photos-name"></div>
+          </label>
+        </div>
+
+        <!-- 개인정보 동의 -->
+        <div class="form-group">
+          <div class="privacy-wrap">
+            <label class="privacy-check">
+              <input type="checkbox" id="f-privacy" name="privacy" />
+              <div class="privacy-text">
+                <strong>[필수]</strong> 개인정보 수집·이용에 동의합니다.<br />
+                수집 항목: 이름, 연락처, 주소(동·호수), 계약 서류 / 목적: 집단소송 접수 및 변호사 상담 / 보유기간: 소송 완료 후 3년
+              </div>
+            </label>
+            <div class="form-error-msg" id="err-privacy" style="margin-top:8px;">개인정보 수집·이용에 동의해 주세요.</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">소송 참여 신청하기</button>
+      </form>
+    </div>
+
+    <!-- 완료 화면 -->
+    <div class="success-card" id="success-card">
+      <div class="success-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#27AE60" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <div class="success-title">신청이 완료되었습니다</div>
+      <div class="success-desc">담당 변호사가 영업일 기준 <strong>3일 내</strong> 연락드리겠습니다.<br />문의 사항은 아래로 연락 주세요.<br /><a href="tel:032-251-1000" style="color:var(--primary);font-weight:700;">032-251-1000</a></div>
+      <div class="receipt-box">
+        <div class="receipt-label">접수번호</div>
+        <div class="receipt-number" id="receipt-number">JUAN-0000</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FIRM ─── -->
+  <section class="firm-section">
+    <h2 class="firm-title">법무법인 더 에이치 황해</h2>
+    <div class="firm-subtitle">하자·입주지연 집단소송 압도적 1위</div>
+    <div class="firm-badges">
+      <span class="firm-badge">변호사 17명</span>
+      <span class="firm-badge">집단소송 전문</span>
+      <span class="firm-badge">성공보수제</span>
+      <span class="firm-badge">무료 법률상담</span>
+    </div>
+    <div class="firm-cases">
+      소비자 집단소송 다수 수행 경험 —<br />
+      SKT 개인정보 유출 소송, 쿠팡 소비자 소송, 포항지진 피해 보상 소송,<br />
+      코로나 방역 피해 소송 등 대형 집단소송 다수 수행
+    </div>
+    <div class="firm-contact">
+      <div class="firm-contact-row">
+        <div class="firm-contact-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="firm-contact-text">인천 미추홀구 학익로 60</div>
+      </div>
+      <div class="firm-contact-row">
+        <div class="firm-contact-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+          </svg>
+        </div>
+        <div class="firm-contact-text"><a href="tel:032-251-1000">032-251-1000</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-firm">법무법인 더 에이치 황해 | 대표 천상현 변호사</div>
+    <div class="footer-info">
+      인천 미추홀구 학익로 60 | <a href="tel:032-251-1000" style="color:#64748B;">032-251-1000</a>
+    </div>
+    <div class="footer-copy">Copyright 2026. All rights reserved.</div>
+  </footer>
+
+  <!-- ─── FLOAT CTA ─── -->
+  <div class="float-cta">
+    <a href="#apply-form" class="btn-cta">소송 신청하기</a>
+    <a href="tel:032-251-1000" class="float-tel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/>
+      </svg>
+      전화상담
+    </a>
+  </div>
+
+  <script>
+    // ─── 연락처 자동 하이픈
+    const telInput = document.getElementById('f-tel');
+    telInput.addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length <= 3) this.value = v;
+      else if (v.length <= 7) this.value = v.slice(0,3) + '-' + v.slice(3);
+      else this.value = v.slice(0,3) + '-' + v.slice(3,7) + '-' + v.slice(7);
+    });
+
+    // ─── 파일명 표시
+    function showFileName(inputId, displayId, multi) {
+      const input = document.getElementById(inputId);
+      const display = document.getElementById(displayId);
+      input.addEventListener('change', function () {
+        if (!this.files.length) { display.textContent = ''; return; }
+        if (multi && this.files.length > 1) {
+          display.textContent = this.files.length + '개 파일 선택됨';
+        } else {
+          display.textContent = this.files[0].name;
+        }
+      });
+    }
+    showFileName('f-contract', 'contract-name', false);
+    showFileName('f-defect-photos', 'defect-photos-name', true);
+
+    // ─── 폼 유효성 + 제출
+    const form = document.getElementById('apply-form-el');
+    const formWrap = document.getElementById('form-wrap');
+    const successCard = document.getElementById('success-card');
+    const receiptEl = document.getElementById('receipt-number');
+
+    function setError(id, show) {
+      const el = document.getElementById(id);
+      if (el) el.style.display = show ? 'block' : 'none';
+    }
+
+    function setFieldError(fieldId, errId, show) {
+      const f = document.getElementById(fieldId);
+      if (f) {
+        if (show) f.classList.add('error');
+        else f.classList.remove('error');
+      }
+      setError(errId, show);
+    }
+
+    function validateTel(v) {
+      return /^010-\d{4}-\d{4}$/.test(v) || /^0\d{1,2}-\d{3,4}-\d{4}$/.test(v);
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      let ok = true;
+
+      const name = document.getElementById('f-name').value.trim();
+      setFieldError('f-name', 'err-name', !name);
+      if (!name) ok = false;
+
+      const tel = document.getElementById('f-tel').value.trim();
+      setFieldError('f-tel', 'err-tel', !validateTel(tel));
+      if (!validateTel(tel)) ok = false;
+
+      const dong = document.getElementById('f-dong').value;
+      setFieldError('f-dong', 'err-dong', !dong);
+      if (!dong) ok = false;
+
+      const ho = document.getElementById('f-ho').value.trim();
+      setFieldError('f-ho', 'err-ho', !ho);
+      if (!ho) ok = false;
+
+      const contractFile = document.getElementById('f-contract').files;
+      const noContract = !contractFile || contractFile.length === 0;
+      setError('err-contract', noContract);
+      if (noContract) ok = false;
+
+      const privacy = document.getElementById('f-privacy').checked;
+      setError('err-privacy', !privacy);
+      if (!privacy) ok = false;
+
+      if (!ok) {
+        // 첫 번째 에러 필드로 스크롤
+        const firstErr = form.querySelector('.error, .form-error-msg[style*="block"]');
+        if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // ─── FormData (실제 API 연동 필요) ───
+      const fd = new FormData(form);
+      // TODO: fetch('/api/apply', { method: 'POST', body: fd })
+
+      // 접수번호 생성
+      const num = 'JUAN-' + Math.floor(1000 + Math.random() * 9000);
+      receiptEl.textContent = num;
+
+      // 완료 화면 전환
+      formWrap.style.display = 'none';
+      successCard.style.display = 'block';
+      successCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+</body>
+</html>
